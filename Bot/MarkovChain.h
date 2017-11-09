@@ -6,7 +6,7 @@
 #include <vector>
 #include <algorithm>
 #include <random>
-#define DEBUG
+//#define DEBUG
 #ifdef DEBUG
 #include <iostream>
 #endif
@@ -15,7 +15,7 @@ static std::mt19937 engine(r_dev());
 
 class MarkovChain
 {
-	std::map< std::string, std::vector<std::string> > vocabulary;
+	std::map< std::vector<std::string>, std::vector<std::string> > vocabulary;
 	int order;
 public:
 	MarkovChain() {}
@@ -25,5 +25,7 @@ public:
 	void addString(std::string);
 
 	std::string getSentence();
+
+	void displayMap();
 	
 };
